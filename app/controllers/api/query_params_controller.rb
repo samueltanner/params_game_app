@@ -12,6 +12,15 @@ class Api::QueryParamsController < ApplicationController
   end
 
   def num_guesser_action
-    @response = "this will be a number"
+    secret_number = "11"
+    input_number = params["num_guess"]
+    if input_number == secret_number
+      @response = "That's the number!"
+    else
+      @response = "eh, not quite"
+    end
+
+    # @response = "this will be a number"
+    render "num_guesser.json.jb"
   end
 end
