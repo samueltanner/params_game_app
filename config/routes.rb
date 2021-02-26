@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   namespace :api do
     get "/name_checker" => "query_params#name_checker_action"
 
-    get "/num_guesser" => "query_params#num_guesser_action"
+    get "/num_guesser/:number" => "query_params#num_guesser_action"
   end
 end
