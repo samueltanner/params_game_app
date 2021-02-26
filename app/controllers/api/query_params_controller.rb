@@ -7,7 +7,6 @@ class Api::QueryParamsController < ApplicationController
     else
       @output_message = "nada"
     end
-
     render "name_checker.json.jb"
   end
 
@@ -22,7 +21,18 @@ class Api::QueryParamsController < ApplicationController
     else
       @response = "yuuuuup"
     end
+    render "num_guesser.json.jb"
+  end
 
+  def profile_action
+    input_username = params[:username]
+    input_password = params[:password]
+
+    if input_username == "hugh" && input_password == "Swordfish"
+      @response = "valid"
+    else
+      @response = "invalid"
+    end
     render "num_guesser.json.jb"
   end
 end
